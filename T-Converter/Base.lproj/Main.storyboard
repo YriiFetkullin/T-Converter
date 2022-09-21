@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="T_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundConverter" translatesAutoresizingMaskIntoConstraints="NO" id="VMj-1M-Jls">
+                                <rect key="frame" x="-19" y="0.0" width="458" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T-Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqv-dc-Ebo">
+                                <rect key="frame" x="96" y="114" width="222" height="41"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8qC-um-KvA">
+                                <rect key="frame" x="63" y="433" width="288" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="cGY-Qp-DfM"/>
+                                </constraints>
+                                <color key="maximumTrackTintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="n0r-5o-PQS"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqB-JT-7PO">
+                                <rect key="frame" x="167.5" y="483" width="79" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8js-9M-PhT">
+                                <rect key="frame" x="175" y="367" width="64" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8js-9M-PhT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EWL-7U-pRP"/>
+                            <constraint firstItem="8qC-um-KvA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PJe-pV-LZO"/>
+                            <constraint firstItem="uqv-dc-Ebo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QmQ-Yh-UtG"/>
+                            <constraint firstItem="8qC-um-KvA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tgc-Sb-zwl"/>
+                            <constraint firstItem="VMj-1M-Jls" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="XmK-GE-XkV"/>
+                            <constraint firstItem="8qC-um-KvA" firstAttribute="top" secondItem="8js-9M-PhT" secondAttribute="bottom" constant="20" id="Y9R-3a-ylj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="VMj-1M-Jls" secondAttribute="leading" constant="19" id="Z6C-Eo-HNC"/>
+                            <constraint firstItem="VMj-1M-Jls" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="25" id="e5o-gh-VzE"/>
+                            <constraint firstItem="pqB-JT-7PO" firstAttribute="top" secondItem="8qC-um-KvA" secondAttribute="bottom" constant="20" id="mZf-bt-sd5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="VMj-1M-Jls" secondAttribute="top" constant="44" id="r6q-OR-RJp"/>
+                            <constraint firstItem="pqB-JT-7PO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="s5X-Ns-5rv"/>
+                            <constraint firstItem="uqv-dc-Ebo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="zMx-qv-Vki"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="8js-9M-PhT" id="k5g-jo-f6q"/>
+                        <outlet property="fahrenheitabel" destination="pqB-JT-7PO" id="0lg-g8-nBy"/>
+                        <outlet property="slider" destination="8qC-um-KvA" id="Pgr-Jp-AW8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="67.633928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backgroundConverter" width="1200" height="1200"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
